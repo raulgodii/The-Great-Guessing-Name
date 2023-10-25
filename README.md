@@ -8,4 +8,4 @@
 
 ![image](https://github.com/raulgodii/The-Great-Guessing-Name/assets/102313699/7c1e5a62-ebaa-49fc-81fd-e9caf41e73cb)
 
-Here is a <a src="https://raulgodii.github.io/The-Great-Guessing-Name/">preview of the result.</a>
+Here is a <a href="https://raulgodii.github.io/The-Great-Guessing-Name/">preview of the result.</a>
