@@ -3,6 +3,7 @@ window.onload = () => {
     easyModeEvent = document.getElementById("easyMode");
     hardModeEvent = document.getElementById("hardMode");
     color = document.getElementsByClassName("color");
+    header = document.getElementById("header");
 
     // Solution
     solution = document.getElementById("solution");
@@ -78,6 +79,8 @@ function paintDivs(){
 
     random = Math.floor(Math.random()*(n));
     color[random].style = ("background-color: " + solutionColor + ";");
+
+    header.style.backgroundColor = "#002f83";
 }
 
 function checkSolution(e){
