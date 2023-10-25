@@ -4,6 +4,7 @@ window.onload = () => {
     hardModeEvent = document.getElementById("hardMode");
     color = document.getElementsByClassName("color");
     header = document.getElementById("header");
+    win = document.getElementById("win");
 
     // Solution
     solution = document.getElementById("solution");
@@ -81,6 +82,8 @@ function paintDivs(){
     color[random].style = ("background-color: " + solutionColor + ";");
 
     header.style.backgroundColor = "#002f83";
+    win.style.backgroundColor = "white";
+    win.innerHTML = "";
 }
 
 function checkSolution(e){
@@ -91,6 +94,7 @@ function checkSolution(e){
             color[i].style = ("background-color: #0e1a2c; box-shadow:none;");
         }
         e.target.style.backgroundColor = bgColor;
+        win.innerHTML = "You Win!";
     } else {
         e.target.style.backgroundColor = "#0e1a2c";
     }

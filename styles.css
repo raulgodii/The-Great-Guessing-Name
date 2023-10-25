@@ -79,3 +79,9 @@ main{
     background-color: #002f83;
     color: white;
 }
+
+#win{
+    color: red;
+    font-weight: bold;
+    cursor:auto;
+}
