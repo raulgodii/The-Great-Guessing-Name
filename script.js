@@ -16,8 +16,8 @@ window.onload = () => {
     easyModeEvent.addEventListener("click", (e)=>{
         easyMode = true;
         hardMode = false;
-        easyModeEvent.style = "background-color: blue;"
-        hardModeEvent.style = "background-color: white;"
+        easyModeEvent.style = "background-color: #002f83;color: white;"
+        hardModeEvent.style = "background-color: white; color: black;"
         solutionColor = generateRandomColor();
         solution.innerHTML = solutionColor;
         paintDivs();
@@ -26,8 +26,8 @@ window.onload = () => {
     hardModeEvent.addEventListener("click", (e)=>{
         easyMode = false;
         hardMode = true;
-        easyModeEvent.style = "background-color: white;"
-        hardModeEvent.style = "background-color: blue;"
+        easyModeEvent.style = "background-color: white; color: black;"
+        hardModeEvent.style = "background-color: #002f83;color: white;"
         solutionColor = generateRandomColor();
         solution.innerHTML = solutionColor;
         paintDivs();
@@ -40,6 +40,12 @@ window.onload = () => {
         color[i].addEventListener("click", checkSolution);
     }
 
+    newColors = document.getElementById("newColors");
+    newColors.addEventListener("click", (e) =>{
+        solutionColor = generateRandomColor();
+        solution.innerHTML = solutionColor;
+        paintDivs();
+    });
 
 }
 
@@ -59,7 +65,7 @@ function generateRandomColor(){
 function paintDivs(){
     if(easyMode){
         for(let i=3; i<6; i++){
-            color[i].style = ("background-color: white;");
+            color[i].style = ("background-color: #0e1a2cf; box-shadow:none;");
         }
         n=3;
     } else{
@@ -71,7 +77,7 @@ function paintDivs(){
     }
 
     random = Math.floor(Math.random()*(n));
-    color[random].style = ("background-color: " + solutionColor + "; border:4px solid black;");
+    color[random].style = ("background-color: " + solutionColor + ";");
 }
 
 function checkSolution(e){
@@ -79,11 +85,11 @@ function checkSolution(e){
     if(solutionColor.toLowerCase()==bgColor){
         document.getElementById("header").style.backgroundColor = bgColor;
         for(let i=0; i<6; i++){
-            color[i].style = ("background-color: white");
+            color[i].style = ("background-color: #0e1a2c; box-shadow:none;");
         }
         e.target.style.backgroundColor = bgColor;
     } else {
-        e.target.style.backgroundColor = "white";
+        e.target.style.backgroundColor = "#0e1a2c";
     }
 
 }

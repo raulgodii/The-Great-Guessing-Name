@@ -5,19 +5,77 @@
 }
 
 header{
-    background-color: #5b6dcc;
+    background-color: #002f83;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 .colors>div{
     width: 150px;
     height: 150px;
     margin: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 46px 0px rgba(0,0,0,0.7);
 }
 
 .colors{
     display: flex;
     flex-flow: row wrap;
-    width: 600px;
+    max-width: 600px;
     align-items: center;
     justify-content: center;
+    margin: 30px;
+}
+
+#solution{
+    color: rgb(255, 255, 255, 50%);
+    font-size: 40px;
+}
+
+h1, h2, h3{
+    margin: 5px;
+}
+
+.menu{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+}
+
+body{
+    background-color: #0e1a2c;
+}
+
+main{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.menu>nav{
+    display: flex;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.menu p{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu p:hover{
+    background-color: #002f83;
+    color: white;
+}
+
+#easyMode{
+    background-color: #002f83;
+    color: white;
 }
