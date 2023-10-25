@@ -19,7 +19,7 @@ window.onload = () => {
         easyModeEvent.style = "background-color: blue;"
         hardModeEvent.style = "background-color: white;"
         solutionColor = generateRandomColor();
-    solution.innerHTML = solutionColor;
+        solution.innerHTML = solutionColor;
         paintDivs();
     });
 
@@ -29,16 +29,16 @@ window.onload = () => {
         easyModeEvent.style = "background-color: white;"
         hardModeEvent.style = "background-color: blue;"
         solutionColor = generateRandomColor();
-    solution.innerHTML = solutionColor;
+        solution.innerHTML = solutionColor;
         paintDivs();
     });
 
     // Paint Divs
     paintDivs();
 
-    color.forEach(element => {
-        element.addEventListener("click", checkSolution());
-    });
+    for(let i=0; i<color.length; i++){
+        color[i].addEventListener("click", checkSolution);
+    }
 
 
 }
@@ -75,5 +75,15 @@ function paintDivs(){
 }
 
 function checkSolution(e){
-    console.log(e.target.style.background-color);
+    bgColor = e.target.style.backgroundColor;
+    if(solutionColor.toLowerCase()==bgColor){
+        document.getElementById("header").style.backgroundColor = bgColor;
+        for(let i=0; i<6; i++){
+            color[i].style = ("background-color: white");
+        }
+        e.target.style.backgroundColor = bgColor;
+    } else {
+        e.target.style.backgroundColor = "white";
+    }
+
 }
