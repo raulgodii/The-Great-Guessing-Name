@@ -2,10 +2,12 @@
 window.onload = () => {
     easyModeEvent = document.getElementById("easyMode");
     hardModeEvent = document.getElementById("hardMode");
+    color = document.getElementsByClassName("color");
 
     // Solution
     solution = document.getElementById("solution");
-    solution.innerHTML = generateRandomColor();
+    solutionColor = generateRandomColor();
+    solution.innerHTML = solutionColor;
 
     // Default Level
     easyMode = true;
@@ -16,6 +18,9 @@ window.onload = () => {
         hardMode = false;
         easyModeEvent.style = "background-color: blue;"
         hardModeEvent.style = "background-color: white;"
+        solutionColor = generateRandomColor();
+    solution.innerHTML = solutionColor;
+        paintDivs();
     });
 
     hardModeEvent.addEventListener("click", (e)=>{
@@ -23,15 +28,19 @@ window.onload = () => {
         hardMode = true;
         easyModeEvent.style = "background-color: white;"
         hardModeEvent.style = "background-color: blue;"
+        solutionColor = generateRandomColor();
+    solution.innerHTML = solutionColor;
+        paintDivs();
     });
 
     // Paint Divs
-    paintDivs(easyMode, hardMode);
+    paintDivs();
 
-}
+    color.forEach(element => {
+        element.addEventListener("click", checkSolution());
+    });
 
-function modeEvent(e){
-    
+
 }
 
 function generateRandomColor(){
@@ -47,12 +56,24 @@ function generateRandomColor(){
     return res;
 }
 
-function paintDivs(easyMode, hardMode){
-    if(easyMode) n=3; else n=6;
+function paintDivs(){
+    if(easyMode){
+        for(let i=3; i<6; i++){
+            color[i].style = ("background-color: white;");
+        }
+        n=3;
+    } else{
+        n=6;
+    }
 
-    color = document.getElementsByClassName("color");
-    console.log(color);
     for(let i=0; i<n; i++){
         color[i].style = ("background-color: " + generateRandomColor() + ";");
     }
+
+    random = Math.floor(Math.random()*(n));
+    color[random].style = ("background-color: " + solutionColor + "; border:4px solid black;");
+}
+
+function checkSolution(e){
+    console.log(e.target.style.background-color);
 }
